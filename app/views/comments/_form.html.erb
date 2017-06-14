@@ -1,0 +1,7 @@
+<div class="col-lg-4 col-md-offset-4" >
+<%= form_for([@post, @post.comments.build]) do |f| %>
+    <div class="text-center"><%= f.text_area :content, :class => 'form-control' %></div>
+    <br>
+    <%= f.submit(:class => 'btn btn-default') %>
+<% end %>
+</div>
