@@ -8,7 +8,7 @@
         <a class="navbar-brand" href="/">Ventura Design Instag</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
+            <li><%= link_to "Profiles", profiles_path  %></li>
             <li><%= link_to "New", new_post_path  %></li>
             <% if user_session %>
             <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
