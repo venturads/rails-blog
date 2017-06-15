@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615055328) do
+ActiveRecord::Schema.define(version: 20170615230207) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -34,22 +34,23 @@ ActiveRecord::Schema.define(version: 20170615055328) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "User_id"
+    t.string   "username"
   end
 
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "username"
-    t.text     "bio"
+    t.string   "username",           default: "venturads"
+    t.string   "bio",                default: "my bio"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "gender"
-    t.string   "city"
-    t.string   "state"
-    t.string   "location"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "gender",             default: "none"
+    t.string   "city",               default: "none"
+    t.string   "state",              default: "none"
+    t.string   "location",           default: "none"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
@@ -67,6 +68,11 @@ ActiveRecord::Schema.define(version: 20170615055328) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
+    t.string   "city"
+    t.string   "state"
+    t.string   "gender"
+    t.text     "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

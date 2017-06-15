@@ -1,5 +1,7 @@
+<div class="container"></div>
 <% @profiles.each do |profile| %>
-  <p><%= profile.username %></p>
-  <p><%= profile.bio %></p>
+  <p><a href="<%= profile_url(profile) %>"><%= image_tag profile.image(:medium), :class => 'img-responsive' %></a></p>
+  <p>Username:  <a href="<%= profile_url(profile) %>"><%= profile.username %></a></p>
+  <hr>
 <% end %>
 </div>

@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :posts
   has_one :profile, dependent: :destroy
-  after_create :create_profile
+ 
 end

@@ -10,13 +10,19 @@
   <%= @profile.username %></p>
   <p><strong><%= model_class.human_attribute_name(:bio) %>:</strong>
   <%= @profile.bio %></p>
+  <p><strong><%= model_class.human_attribute_name(:gender) %>:</strong>
+  <%= @profile.gender %></p>
+  <p><strong><%= model_class.human_attribute_name(:city) %>:</strong>
+  <%= @profile.city %></p>
+  <p><strong><%= model_class.human_attribute_name(:state) %>:</strong>
+  <%= @profile.state %></p>
      
     <%= link_to t('.back', :default => t("helpers.links.back")),
-                  posts_path, :class => 'btn btn-default'  %>
+                  profiles_path, :class => 'btn btn-default'  %>
     <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                  edit_post_path(@post), :class => 'btn btn-default' %>
+                  edit_profile_path(@profile), :class => 'btn btn-default' %>
     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                  post_path(@post),
+                  profile_path(@profile),
                   :method => 'delete',
                   :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                   :class => 'btn btn-danger' %>
