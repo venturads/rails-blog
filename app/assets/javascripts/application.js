@@ -15,7 +15,7 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
-//= require jquery.infinitescroll
+
 
 $(document).ready(function() {
   if ($('.pagination').length) {
