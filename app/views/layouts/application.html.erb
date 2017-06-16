@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Ventura Design Insta" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Ventura Design Instagram" %></title>
     <%= csrf_meta_tags %>
-
+    <link rel="shortcut icon" href="/images/Instagram-icon.jpg" type="image/x-icon">
     <%= stylesheet_link_tag "application", :media => "all" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
@@ -37,7 +37,6 @@
     <![endif]-->
   </head>
   <body>
-
     <%= render 'layouts/navmenu' %>
 
     <div class="container">
@@ -50,7 +49,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Ventura Design 2017</p>
+        <p><a href="https://venturads.com" target="_blank">&copy; Ventura Design 2017 </a></p>
       </footer>
 
     </div> <!-- /container -->

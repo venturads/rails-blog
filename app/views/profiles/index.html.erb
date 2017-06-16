@@ -1,7 +1,11 @@
-<div class="container"></div>
-<% @profiles.each do |profile| %>
-  <p><a href="<%= profile_url(profile) %>"><%= image_tag profile.image(:medium), :class => 'img-responsive' %></a></p>
-  <p>Username:  <a href="<%= profile_url(profile) %>"><%= profile.username %></a></p>
-  <hr>
-<% end %>
+<div class="container">
+  <div class="col-md-4" align="center">
+    <% @users = User.all %>
+    <% @users.each do |user| %>
+      <a href="<%= profile_url(user) %>"><%= image_tag user.image(:medium), :class => 'img-responsive' %></a>
+      <div class="well"><%= link_to user.username, profile_url(user) %><br/></div>
+    <% end %>
+  
+    <hr>
+  </div>
 </div>

@@ -2,7 +2,8 @@
 <div class="page-header text-center">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-
+Welcome, <%= current_user.username %> 
+<br><br>
 <div id="posts">
   <%= render @posts %>
   <%= will_paginate @posts %>

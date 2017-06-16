@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
+      
   
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 3)
+    @posts = Post.paginate(:page => params[:page], :per_page => 6).order('created_at DESC')
   end
 
   # GET /posts/1
@@ -27,8 +28,12 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    
     @post = Post.new(post_params)
-
+    
+    @post.username = current_user.username
+    @post.save
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -72,6 +77,10 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :image)
+      params.require(:post).permit(:title, :body, :image, :username)
+    end
+    
+    def find_user
+      @user = User.find(params[:id])
     end
 end

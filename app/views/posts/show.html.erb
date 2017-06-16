@@ -7,7 +7,7 @@
 <div class="container" align="center">
   <a href="<%= @post.image %>"><%= image_tag @post.image(:medium), :class => 'img-responsive' %></a>
   <p><strong><%= model_class.human_attribute_name(:username) %>:</strong>
-  <%= @post.username %></p>
+  <%= link_to user_url %></p>
   <p><strong><%= model_class.human_attribute_name(:title) %>:</strong>
   <%= @post.title %></p>
   <p><strong><%= model_class.human_attribute_name(:body) %>:</strong>

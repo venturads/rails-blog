@@ -1,12 +1,11 @@
 class ProfilesController < ApplicationController
-    before_action :set_profile, only: [:show, :edit, :update, :destroy]
     
     def index
-        @profiles = Profile.all
+        @users = User.paginate(:page => params[:page], :per_page => 3)
     end
 
     def show
-        @profile = Profile.find(params[:id])
+        @profile = User.find(params[:id])
     end
     
     def edit
