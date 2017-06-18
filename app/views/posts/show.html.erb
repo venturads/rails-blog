@@ -7,7 +7,7 @@
 <div class="container" align="center">
   <a href="<%= @post.image %>"><%= image_tag @post.image(:medium), :class => 'img-responsive' %></a>
   <p><strong><%= model_class.human_attribute_name(:username) %>:</strong>
-  <%= link_to user_url %></p>
+  <%= link_to @post.user.username, profiles_path(@post.user_id) %></p>
   <p><strong><%= model_class.human_attribute_name(:title) %>:</strong>
   <%= @post.title %></p>
   <p><strong><%= model_class.human_attribute_name(:body) %>:</strong>
@@ -15,16 +15,23 @@
      
     <%= link_to t('.back', :default => t("helpers.links.back")),
                   posts_path, :class => 'btn btn-default'  %>
-    <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                  edit_post_path(@post), :class => 'btn btn-default' %>
-    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                  post_path(@post),
-                  :method => 'delete',
-                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                  :class => 'btn btn-danger' %>
+                  <% if user_signed_in? && @post.user.username == current_user.username %>
+                
+                    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                                  edit_post_path(@post), :class => 'btn btn-default' %>
+                    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                                  post_path(@post),
+                                  :method => 'delete',
+                                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                                  :class => 'btn btn-danger' %>
 
-<p><%= render @post.comments %></p>
-  <hr>
-<p><%= render 'comments/form' %></p>
+                      <p><%= render @post.comments %></p>
+                        <hr>
+                      <p><%= render 'comments/form' %></p>
+                <% else %>
+                  <br><br>
+                    <%= link_to 'Sign in or Register', new_user_registration_path %>
+                  
+                <% end %>
 </div>
 </div>

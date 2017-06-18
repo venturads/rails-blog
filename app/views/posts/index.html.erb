@@ -2,7 +2,12 @@
 <div class="page-header text-center">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-Welcome, <%= current_user.username %> 
+Welcome,
+<% if user_signed_in? %>
+<%= current_user.username %> 
+<% else %>
+user
+<% end %>
 <br><br>
 <div id="posts">
   <%= render @posts %>
