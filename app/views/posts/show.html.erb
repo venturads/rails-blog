@@ -21,7 +21,10 @@
      
     <%= link_to t('.back', :default => t("helpers.links.back")),
                   posts_path, :class => 'btn btn-default'  %>
-                  <% if user_signed_in? && @post.user.username == current_user.username %>
+              <% if (@post.user_id == nil) %>
+               <%= 'Unknown user' %>
+              <% else %>
+                <% if user_signed_in? && @post.user.username == current_user.username %>
                 
                     <%= link_to t('.edit', :default => t("helpers.links.edit")),
                                   edit_post_path(@post), :class => 'btn btn-default' %>
@@ -39,5 +42,6 @@
                     <%= link_to 'Sign in or Register', new_user_registration_path %>
                   
                 <% end %>
+              <% end %>
 </div>
 </div>
