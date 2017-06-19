@@ -2,10 +2,10 @@
 
 one:
   content: MyText
-  user_id: 
-  post_id: 
+  user_id: 21
+  post_id: 21
 
 two:
   content: MyText
-  user_id: 
-  post_id: 
+  user_id: 21
+  post_id: 21

@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 4.times do
-    Post.create(title:"My Title",body:"my body text")
+    Post.create(title:"My Title",body:"my body text", username:"aventura")
 end
