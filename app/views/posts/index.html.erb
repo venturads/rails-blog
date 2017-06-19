@@ -9,13 +9,7 @@ Welcome,
 user
 <% end %>
 <br><br>
-<div class="container-fluid">
-  <div id="posts">
-    <div class="row">
-      <%= render @posts %>
-    </div>
-    <div class="row">
-      <%= will_paginate @posts %>
-    </div>
-  </div>
+<div id="posts">
+  <%= render @posts %>
 </div>
+  <%= will_paginate @posts %>
