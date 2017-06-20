@@ -1,5 +1,5 @@
 Aws.config.update({
-  region: 's3-us-west-1',
+  region: 'us-west-2',
   credentials: Aws::Credentials.new(ENV['AKIAJ6UN355TED5ETH3A'], ENV['cYMDACaeWrTkXPfIQmjaaFw9cx5p8irGEkgvYOAQ']),
 })
 
