@@ -79,7 +79,9 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
-  config.paperclip_defaults = {
+  
+end
+config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
     bucket: ENV.fetch('rails-s3-test'),
@@ -88,4 +90,3 @@ Rails.application.configure do
     s3_region: ENV.fetch('s3-us-west-2.amazonaws.com'),
   }
 }
-end
