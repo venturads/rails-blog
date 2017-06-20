@@ -78,4 +78,14 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('rails-s3-test'),
+    access_key_id: ENV.fetch('AKIAIRZJQZ7JQFH6YB2Q'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('s3-us-west-2.amazonaws.com'),
+  }
+}
 end
