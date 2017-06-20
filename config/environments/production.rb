@@ -83,8 +83,8 @@ Rails.application.configure do
   storage: :s3,
   s3_credentials: {
     bucket: ENV.fetch('rails-s3-test'),
-    access_key_id: ENV.fetch('AKIAIRZJQZ7JQFH6YB2Q'),
-    secret_access_key: ENV.fetch('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'),
+    access_key_id: ENV.fetch('AKIAJ6UN355TED5ETH3A'),
+    secret_access_key: ENV.fetch('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'),
     s3_region: ENV.fetch('s3-us-west-2.amazonaws.com'),
   }
 }
