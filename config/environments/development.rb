@@ -45,9 +45,9 @@ Rails.application.configure do
   s3_protocol: 'http',
   s3_credentials: {
     bucket: ENV.fetch('rails-s3-test'),
-    access_key_id: ENV.fetch('AKIAJ6UN355TED5ETH3A'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('us-west-2'),
+    access_key_id: ENV.fetch('AKIAIKC6VFQVRSHJYDYA'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('s3.us-west-2'),
   }
 }
 end
