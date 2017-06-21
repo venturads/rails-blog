@@ -1,0 +1,3 @@
+access_key_id: <%= ENV['AKIAJ6UN355TED5ETH3A'] %>
+secret_access_key: <%= ENV['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'] %>
+bucket: <%= ENV['us-west-2'] %>
