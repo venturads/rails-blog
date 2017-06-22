@@ -5,15 +5,7 @@
   
 </head>
 <%- model_class = Post -%>
-<div class="page-header text-center">
-  
-</div>
-Welcome,
-<% if user_signed_in? %>
-<%= current_user.username %> 
-<% else %>
-user
-<% end %>
+
 <br><br>
 <div id="posts">
   <%= render @posts %>
