@@ -1,10 +1,10 @@
 <div class="container">
 <%- model_class = Post -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  
 </div>
 
-<div class="container" align="center">
+<div class="container border col-md-5 col-md-offset-3" align="center" style="border:1px solid black;">
   <a href="<%= @post.image %>"><%= image_tag @post.image(:medium), :class => 'img-responsive' %></a>
   <p><strong><%= model_class.human_attribute_name(:username) %>:</strong>
      
@@ -24,7 +24,7 @@
               <% if (@post.user_id == nil) %>
                <%= 'Unknown user' %>
               <% else %>
-                <% if user_signed_in? && @post.user.username == current_user.username %>
+                <% if user_signed_in? %>
                 
                     <%= link_to t('.edit', :default => t("helpers.links.edit")),
                                   edit_post_path(@post), :class => 'btn btn-default' %>
@@ -39,7 +39,7 @@
                       <p><%= render 'comments/form' %></p>
                 <% else %>
                   <br><br>
-                    <%= link_to 'Sign in or Register', new_user_registration_path %>
+                    <%= link_to 'Sign in or Register', new_user_session_path %>
                   
                 <% end %>
               <% end %>
