@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="col-md-4" align="center">
+  <div class="text-center col-sm-7 col-sm-offset-3" align="center">
     <% @users = User.all %>
     <% @users.each do |user| %>
-      <a href="<%= profile_url(user) %>"><%= image_tag user.image(:medium), :class => 'img-responsive' %></a>
-      <div class="well"><%= link_to user.username, profile_url(user) %><br/></div>
+      <a href="<%= profile_url(user) %>"><%= image_tag user.image(:medium), class: 'img-responsive', size: '300x300' %></a>
+      <%= link_to user.username, profile_url(user) %>
     <% end %>
   
     <hr>

@@ -8,8 +8,9 @@
   <% if (@post.user_id == nil) %>
     <%= 'Unknown user' %>
   <% else %>
-    <%= link_to @post.user.username, profiles_path(@post.user_id) %></p>
+    <%= link_to @post.user.username, profile_path(@post.user_id) %></p>
   <% end %>
+  
   
   <p><strong><%= model_class.human_attribute_name(:title) %>:</strong>
   <%= @post.title %></p>

@@ -7,13 +7,17 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.paginate(:page => params[:page], :per_page => 6).order('created_at DESC')
-    @comments = Comment.all
+    #@profile = User.where(id: @post.user_id)
+    #@users = User.where(id: @post.user_id)
+    
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
     @comments = Comment.where(post_id: @post).order("created_at DESC")
+    @users = User.where(id: @post.user_id)
+    #@profile = User.find(id: @post.user_id)
   end
 
   # GET /posts/new
