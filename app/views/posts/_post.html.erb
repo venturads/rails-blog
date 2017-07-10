@@ -1,9 +1,9 @@
-    <div class="text-center col-sm-7 col-sm-offset-3" id="post" >
-        <div class"row" style="border:1px solid gray;">
+    <div class="text-center" id="post" >
+        <div class"row" style="border:1px solid gray;" class="col-sm-7 col-sm-offset-3">
             <p style="float:left;">
 
                     <%= link_to 'by: '+post.username, profile_url(post.user_id) %></p>
-            <a href="<%= post_url(post) %>"><%= image_tag post.image(:medium), :class => 'img-responsive' %></a>
+            <a href="<%= post_url(post) %>"><%= image_tag post.image(:medium), class: 'img-responsive', size: '500x500' %></a>
             
         </div>
     </div>
