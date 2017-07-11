@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: venturads
+  api_key: '276445113764893'
+  api_secret: 2HFoa4FaHtT-kYRICxwAgTHVc04
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: venturads
+  api_key: '276445113764893'
+  api_secret: 2HFoa4FaHtT-kYRICxwAgTHVc04
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: venturads
+  api_key: '276445113764893'
+  api_secret: 2HFoa4FaHtT-kYRICxwAgTHVc04
+  enhance_image_tag: true
+  static_image_support: false
