@@ -9,4 +9,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :username, :image, :bio, :city, :state, :gender, :password, :password_confirmation, :current_password])
     devise_parameter_sanitizer.permit(:account_update, keys: [:email, :username, :image, :bio, :city, :state, :gender, :password, :password_confirmation, :current_password])
   end
+  
+  def cors_set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    headers['Access-Control-Allow-Headers'] = '*'
+    headers['Access-Control-Max-Age'] = "1728000"
+  end
 end

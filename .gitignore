@@ -18,3 +18,7 @@
 
 # Ignore applicatoin configuration
 /config/application.yml
+
+# Ignore gemfiles
+/Gemfile
+/Gemfile.lock
